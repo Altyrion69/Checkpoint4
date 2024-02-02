@@ -16,10 +16,12 @@
 		</div>
 	</section>
 
+	<p class="text-center">{{ artwork.description }}</p>
+
 	<div class="text-center">
 		<a href="{{ path('app_artwork_index') }}">Retour aux oeuvres</a>
-&nbsp;|&nbsp;
-    <a href="{{ path('app_artwork_edit', {'id': artwork.id}) }}">Modifier</a>
+		&nbsp;|&nbsp;
+		<a href="{{ path('app_artwork_edit', {'id': artwork.id}) }}">Modifier</a>
 	</div>
 
 	{{ include('artwork/_delete_form.html.twig') }}

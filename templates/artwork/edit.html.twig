@@ -1,13 +1,57 @@
+{# templates/artwork/edit.html.twig #}
+
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Artwork{% endblock %}
+{% block title %}Modification de l'Oeuvre
+{% endblock %}
 
 {% block body %}
-    <h1>Edit Artwork</h1>
+	<div
+		class="edit-container">
+		<!-- Ajout du conteneur avec l'image de fond et l'effet glasmorphism -->
+		<div class="container mt-4">
+			<div class="row justify-content-center">
+				<div class="col-md-20">
+					<div class="card">
+						<div class="card-header text-center">
+							Edit Artwork
+						</div>
+						<div class="card-body">
+							{{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
 
-    {{ include('artwork/_form.html.twig', {'button_label': 'Update'}) }}
+							<div class="mb-3">
+								{{ form_row(form.name) }}
+							</div>
 
-    <a href="{{ path('app_artwork_index') }}">back to list</a>
+							<div class="mb-3">
+								{{ form_row(form.posterFile) }}
+							</div>
 
-    {{ include('artwork/_delete_form.html.twig') }}
+							<div class="mb-3">
+								{{ form_row(form.description) }}
+							</div>
+
+							<div class="mb-3">
+								{{ form_row(form.category) }}
+							</div>
+
+							<div class="mb-3">
+								{{ form_row(form.user) }}
+							</div>
+
+							<button type="submit" class="btn btn-primary">Update</button>
+
+							{{ form_end(form) }}
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="text-center mt-3">
+				<a href="{{ path('app_artwork_index') }}" class="btn btn-link">Back to list</a>
+				{{ include('artwork/_delete_form.html.twig') }}
+			</div>
+		</div>
+	</div>
+	<!-- Fin du conteneur .edit-container -->
 {% endblock %}

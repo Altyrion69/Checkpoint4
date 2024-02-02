@@ -21,6 +21,7 @@ class ArtworkType extends AbstractType
                 'required'      => false,
                 'allow_delete'  => true,
                 'download_uri' => true,
+                'label' => false,
             ])
             ->add('description')
             ->add('category', EntityType::class, [
